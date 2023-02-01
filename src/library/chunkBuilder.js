@@ -71,9 +71,9 @@ export const getBlockDividerChunk = (blockType: string, depth: number, data: Obj
   };
 };
 
-export const getAtomicBlockChunk = (entityId: number): Object => {
+export const getAtomicBlockChunk = (entityId: number, data: Object): Object => {
   return {
-    text: '\r ',
+    text: data.dontSplit ? '' : '\r ',
     inlines: [new OrderedSet()],
     entities: [entityId],
     blocks: [{
